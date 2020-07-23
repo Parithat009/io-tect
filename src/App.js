@@ -9,7 +9,6 @@ import RouteMenu from './route/routeMenu'
 class App extends Component {
 
   render() {
-    console.log('ddd');
     return (
       <Provider>
         <Router>

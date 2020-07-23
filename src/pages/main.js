@@ -6,18 +6,12 @@ import { Icon } from 'semantic-ui-react'
 
 const Main = () => {
   const [filterUsers, setFilterUsers] = useState([])
-  const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
 
-  const { getData, users, editStatusUsers } = useContext(AppContext)
+  const { getData, users, editStatusUsers ,loader} = useContext(AppContext)
 
   useEffect(() => {
-    setLoading(true)
-    getData().then(res => {
-      if (res.status === 'success') {
-        setLoading(false)
-      }
-    })
+    getData()
   }, [])
 
   useEffect(() => {
@@ -29,7 +23,7 @@ const Main = () => {
   }, [search, users])
 
 
-  if (loading) {
+  if (loader.status) {
     return <div className="loaders"><div className='loader'></div></div>
   }
   else {

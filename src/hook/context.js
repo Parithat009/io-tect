@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import { usersReducer, GET_USERS, EDIT_STATUS_USERS } from '../hook'
 import axios from 'axios'
 
-const Axios = axios.create({ baseURL: 'http://jsonplaceholder.typicode.com/users' })
+const Axios = axios.create({ baseURL: 'https://jsonplaceholder.typicode.com/users' })
 export const AppContext = createContext({})
 
 export const Context = ({ children }) => {
